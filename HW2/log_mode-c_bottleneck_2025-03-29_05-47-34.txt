@@ -1,0 +1,37 @@
+the cuda is available.
+12.1
+True
+NVIDIA GeForce RTX 4090
+========== Experiment Info ==========
+Mode (part of question): c
+ResNet version: 2 (bottleneck)
+ResNet size (n): 18
+Batch size: 16
+Learning rate: 0.01
+Dropout rate: 0.3
+Epochs: 20
+=====================================
+
+Files already downloaded and verified
+Files already downloaded and verified
+Epoch 0 training loss: 1.691 training accuracy: 37.294%
+Epoch 1 training loss: 1.332 training accuracy: 52.164%
+Epoch 2 training loss: 1.153 training accuracy: 58.886%
+Epoch 3 training loss: 1.047 training accuracy: 62.902%
+Epoch 4 training loss: 0.980 training accuracy: 65.424%
+Epoch 5 training loss: 0.922 training accuracy: 67.494%
+Epoch 6 training loss: 0.874 training accuracy: 69.106%
+Epoch 7 training loss: 0.839 training accuracy: 70.540%
+Epoch 8 training loss: 0.801 training accuracy: 71.970%
+Epoch 9 training loss: 0.767 training accuracy: 72.888%
+Epoch 10 training loss: 0.741 training accuracy: 74.386%
+Epoch 11 training loss: 0.717 training accuracy: 75.016%
+Epoch 12 training loss: 0.696 training accuracy: 75.750%
+Epoch 13 training loss: 0.675 training accuracy: 76.488%
+Epoch 14 training loss: 0.661 training accuracy: 77.010%
+Epoch 15 training loss: 0.647 training accuracy: 77.440%
+Epoch 16 training loss: 0.633 training accuracy: 78.146%
+Epoch 17 training loss: 0.617 training accuracy: 78.356%
+Epoch 18 training loss: 0.607 training accuracy: 78.888%
+Epoch 19 training loss: 0.596 training accuracy: 79.130%
+Accuracy of the network on the test set: 76.98%

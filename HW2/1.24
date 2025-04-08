@@ -1,0 +1,300 @@
+Channels:
+ - conda-forge
+ - defaults
+ - pytorch
+Platform: win-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: C:\Users\HIALAB\anaconda3
+
+  added / updated specs:
+    - mkl
+    - mkl-service
+    - numexpr
+    - numpy
+    - scikit-learn
+    - scipy
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    libblas-3.9.0              |1_h8933c1f_netlib         193 KB  conda-forge
+    libcblas-3.9.0             |8_h719fc58_netlib          48 KB  conda-forge
+    liblapack-3.9.0            |8_h719fc58_netlib         1.9 MB  conda-forge
+    m2w64-gcc-libgfortran-5.3.0|                6         342 KB  conda-forge
+    m2w64-gcc-libs-5.3.0       |                7         520 KB  conda-forge
+    m2w64-gcc-libs-core-5.3.0  |                7         214 KB  conda-forge
+    m2w64-gmp-6.1.0            |                2         726 KB  conda-forge
+    mkl-2023.1.0               |   h6a75c08_48682       137.2 MB  conda-forge
+    scikit-learn-1.6.1         |  py311hdcb8d17_0         9.2 MB  conda-forge
+    scipy-1.13.1               |  py311hd4686c6_0        14.8 MB  conda-forge
+    ------------------------------------------------------------
+                                           Total:       165.2 MB
+
+The following NEW packages will be INSTALLED:
+
+  libblas            conda-forge/win-64::libblas-3.9.0-1_h8933c1f_netlib 
+  libcblas           conda-forge/win-64::libcblas-3.9.0-8_h719fc58_netlib 
+  liblapack          conda-forge/win-64::liblapack-3.9.0-8_h719fc58_netlib 
+  m2w64-gcc-libgfor~ conda-forge/win-64::m2w64-gcc-libgfortran-5.3.0-6 
+  m2w64-gcc-libs     conda-forge/win-64::m2w64-gcc-libs-5.3.0-7 
+  m2w64-gcc-libs-co~ conda-forge/win-64::m2w64-gcc-libs-core-5.3.0-7 
+  m2w64-gmp          conda-forge/win-64::m2w64-gmp-6.1.0-2 
+
+The following packages will be UPDATED:
+
+  mkl                pkgs/main::mkl-2023.1.0-h6b88ed4_46358 --> conda-forge::mkl-2023.1.0-h6a75c08_48682 
+  scikit-learn       pkgs/main::scikit-learn-1.5.1-py311he~ --> conda-forge::scikit-learn-1.6.1-py311hdcb8d17_0 
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  scipy              pkgs/main::scipy-1.13.1-py311h9f229c6~ --> conda-forge::scipy-1.13.1-py311hd4686c6_0 
+
+
+Proceed ([y]/n)? 
+
+Downloading and Extracting Packages: ...working...mkl-2023.1.0         | 137.2 MB  |            |   0% 
+scipy-1.13.1         | 14.8 MB   |            |   0% [A
+
+scikit-learn-1.6.1   | 9.2 MB    |            |   0% [A[A
+
+
+liblapack-3.9.0      | 1.9 MB    |            |   0% [A[A[A
+
+
+
+m2w64-gmp-6.1.0      | 726 KB    |            |   0% [A[A[A[A
+
+
+
+
+m2w64-gcc-libs-5.3.0 | 520 KB    |            |   0% [A[A[A[A[A
+
+
+
+
+
+m2w64-gcc-libgfortra | 342 KB    |            |   0% [A[A[A[A[A[A
+
+
+
+
+
+
+m2w64-gcc-libs-core- | 214 KB    |            |   0% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+libblas-3.9.0        | 193 KB    |            |   0% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libcblas-3.9.0       | 48 KB     |            |   0% [A[A[A[A[A[A[A[A[Amkl-2023.1.0         | 137.2 MB  |            |   0% 
+
+
+
+m2w64-gmp-6.1.0      | 726 KB    | 2          |   2% [A[A[A[A
+
+scikit-learn-1.6.1   | 9.2 MB    |            |   0% [A[A
+
+
+liblapack-3.9.0      | 1.9 MB    |            |   1% [A[A[A
+
+
+
+m2w64-gmp-6.1.0      | 726 KB    | ########## | 100% [A[A[A[A
+
+
+liblapack-3.9.0      | 1.9 MB    | ########## | 100% [A[A[Amkl-2023.1.0         | 137.2 MB  | 3          |   4% 
+
+scikit-learn-1.6.1   | 9.2 MB    | ####7      |  47% [A[A
+
+
+liblapack-3.9.0      | 1.9 MB    | ########## | 100% [A[A[A
+
+
+
+m2w64-gmp-6.1.0      | 726 KB    | ########## | 100% [A[A[A[A
+
+
+
+m2w64-gmp-6.1.0      | 726 KB    | ########## | 100% [A[A[A[A
+
+
+
+
+m2w64-gcc-libs-5.3.0 | 520 KB    | 3          |   3% [A[A[A[A[A
+
+
+
+
+
+m2w64-gcc-libgfortra | 342 KB    | 4          |   5% [A[A[A[A[A[A
+
+
+
+
+m2w64-gcc-libs-5.3.0 | 520 KB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+
+m2w64-gcc-libgfortra | 342 KB    | ########## | 100% [A[A[A[A[A[A
+scipy-1.13.1         | 14.8 MB   |            |   0% [Amkl-2023.1.0         | 137.2 MB  | 9          |  10% 
+
+scikit-learn-1.6.1   | 9.2 MB    | #########  |  91% [A[A
+
+
+
+
+
+m2w64-gcc-libgfortra | 342 KB    | ########## | 100% [A[A[A[A[A[A
+
+
+
+
+m2w64-gcc-libs-5.3.0 | 520 KB    | ########## | 100% [A[A[A[A[A
+
+scikit-learn-1.6.1   | 9.2 MB    | ########## | 100% [A[A
+
+
+
+
+
+
+m2w64-gcc-libs-core- | 214 KB    | 7          |   7% [A[A[A[A[A[A[A
+
+
+
+
+
+
+m2w64-gcc-libs-core- | 214 KB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+libblas-3.9.0        | 193 KB    | 8          |   8% [A[A[A[A[A[A[A[A
+scipy-1.13.1         | 14.8 MB   | ##         |  21% [A
+
+
+
+
+
+
+
+libblas-3.9.0        | 193 KB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+m2w64-gcc-libs-core- | 214 KB    | ########## | 100% [A[A[A[A[A[A[Amkl-2023.1.0         | 137.2 MB  | #5         |  15% 
+
+
+
+
+
+
+
+libblas-3.9.0        | 193 KB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libcblas-3.9.0       | 48 KB     | ###3       |  34% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libcblas-3.9.0       | 48 KB     | ########## | 100% [A[A[A[A[A[A[A[A[A
+scipy-1.13.1         | 14.8 MB   | #######    |  70% [A
+
+
+
+
+
+
+
+
+libcblas-3.9.0       | 48 KB     | ########## | 100% [A[A[A[A[A[A[A[A[Amkl-2023.1.0         | 137.2 MB  | #9         |  20% 
+scipy-1.13.1         | 14.8 MB   | #########7 |  98% [A
+scipy-1.13.1         | 14.8 MB   | ########## | 100% [Amkl-2023.1.0         | 137.2 MB  | ##4        |  24% mkl-2023.1.0         | 137.2 MB  | ##7        |  27% mkl-2023.1.0         | 137.2 MB  | ###3       |  33% mkl-2023.1.0         | 137.2 MB  | ####2      |  42% mkl-2023.1.0         | 137.2 MB  | #####1     |  51% mkl-2023.1.0         | 137.2 MB  | ######2    |  62% mkl-2023.1.0         | 137.2 MB  | #######    |  70% mkl-2023.1.0         | 137.2 MB  | #######7   |  78% 
+
+scikit-learn-1.6.1   | 9.2 MB    | ########## | 100% [A[Amkl-2023.1.0         | 137.2 MB  | ########7  |  88% 
+scipy-1.13.1         | 14.8 MB   | ########## | 100% [Amkl-2023.1.0         | 137.2 MB  | #########5 |  95% mkl-2023.1.0         | 137.2 MB  | ########## | 100% mkl-2023.1.0         | 137.2 MB  | ########## | 100%                                                      
+                                                     [A
+
+                                                     [A[A
+
+
+                                                     [A[A[A
+
+
+
+                                                     [A[A[A[A
+
+
+
+
+                                                     [A[A[A[A[A
+
+
+
+
+
+                                                     [A[A[A[A[A[A
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A done
+Preparing transaction: - done
+Verifying transaction: | / done
+Executing transaction: \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done

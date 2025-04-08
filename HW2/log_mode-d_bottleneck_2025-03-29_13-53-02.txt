@@ -1,0 +1,57 @@
+the cuda is available.
+12.1
+True
+NVIDIA GeForce RTX 4090
+========== Experiment Info ==========
+Mode (part of question): d
+ResNet version: 2 (bottleneck)
+ResNet size (n): 18
+Batch size: 32
+Learning rate: 0.01
+Dropout rate: 0.1
+Epochs: 40
+=====================================
+
+Files already downloaded and verified
+Files already downloaded and verified
+Epoch 0 training loss: 1.603 training accuracy: 40.694%
+Epoch 1 training loss: 1.206 training accuracy: 56.492%
+Epoch 2 training loss: 1.021 training accuracy: 63.626%
+Epoch 3 training loss: 0.915 training accuracy: 67.512%
+Epoch 4 training loss: 0.824 training accuracy: 70.928%
+Epoch 5 training loss: 0.758 training accuracy: 73.292%
+Epoch 6 training loss: 0.705 training accuracy: 75.332%
+Epoch 7 training loss: 0.667 training accuracy: 76.776%
+Epoch 8 training loss: 0.626 training accuracy: 78.014%
+Epoch 9 training loss: 0.595 training accuracy: 79.314%
+Epoch 10 training loss: 0.578 training accuracy: 79.878%
+Epoch 11 training loss: 0.550 training accuracy: 80.788%
+Epoch 12 training loss: 0.530 training accuracy: 81.494%
+Epoch 13 training loss: 0.508 training accuracy: 82.452%
+Epoch 14 training loss: 0.501 training accuracy: 82.216%
+Epoch 15 training loss: 0.481 training accuracy: 83.120%
+Epoch 16 training loss: 0.470 training accuracy: 83.476%
+Epoch 17 training loss: 0.455 training accuracy: 84.160%
+Epoch 18 training loss: 0.442 training accuracy: 84.356%
+Epoch 19 training loss: 0.434 training accuracy: 84.830%
+Epoch 20 training loss: 0.423 training accuracy: 85.198%
+Epoch 21 training loss: 0.414 training accuracy: 85.614%
+Epoch 22 training loss: 0.406 training accuracy: 85.630%
+Epoch 23 training loss: 0.399 training accuracy: 85.996%
+Epoch 24 training loss: 0.390 training accuracy: 86.310%
+Epoch 25 training loss: 0.380 training accuracy: 86.616%
+Epoch 26 training loss: 0.372 training accuracy: 86.908%
+Epoch 27 training loss: 0.368 training accuracy: 87.024%
+Epoch 28 training loss: 0.362 training accuracy: 87.346%
+Epoch 29 training loss: 0.351 training accuracy: 87.602%
+Epoch 30 training loss: 0.345 training accuracy: 87.810%
+Epoch 31 training loss: 0.343 training accuracy: 88.038%
+Epoch 32 training loss: 0.333 training accuracy: 88.202%
+Epoch 33 training loss: 0.332 training accuracy: 88.262%
+Epoch 34 training loss: 0.323 training accuracy: 88.474%
+Epoch 35 training loss: 0.322 training accuracy: 88.498%
+Epoch 36 training loss: 0.318 training accuracy: 88.866%
+Epoch 37 training loss: 0.312 training accuracy: 88.974%
+Epoch 38 training loss: 0.305 training accuracy: 89.190%
+Epoch 39 training loss: 0.301 training accuracy: 89.260%
+Accuracy of the network on the test set: 82.87%
