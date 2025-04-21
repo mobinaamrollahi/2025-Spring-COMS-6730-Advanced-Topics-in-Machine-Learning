@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+
+\usepackage{color}
+\usepackage{amsmath,amsthm,amssymb,multirow,paralist}
+\usepackage{graphicx}
+\usepackage{url}
+
+% Use 1/2-inch margins.
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{COM S 673: Advanced Topics in Computational Models of Learning\\
+Assignment \#3 (part a)\\
+\vspace{2pt}}}\\
+\linethickness{1mm}\line(1,0){500}\\
+\begin{enumerate}
+    \item You need to submit a report and your code to
+    Canvas. Your hard-copy report should include (1) answers to the
+    non-programming part, and (2) analysis and results of the
+    programming part. Please put all your code files and report into a compressed file
+    named ``HW\#\_FirstName\_LastName.zip''
+    \item Unlimited number of submissions are allowed and the latest one will be timed and graded.
+    \item Please read and follow submission instructions. No exception will be made to accommodate incorrectly submitted files/reports.
+    \item All students are required to typeset their reports using latex.
+    \item Only write your code between the following lines. Do not modify other parts.
+
+\#\#\# YOUR CODE HERE
+
+\#\#\# END YOUR CODE
+\end{enumerate}
+\end{center}
+\linethickness{1mm}\line(1,0){500}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{enumerate}
+
+    \item (70 points) (Coding Task) Graph Neural Networks.
+    
+    In this assignment, you will use PyTorch to implement some graph deep learning layers including graph convolution layer, graph attention layer, graph differentiable pooling layer, and graph pooling layer. You are given a graph classification dataset. The code folder provides the starting code. You must implement the layers using the starting code. In this assignment, you may need a GPU.
+
+    \begin{enumerate}
+        \item (15 points) Complete the class GConv in ``src/utils/layers.py'', which implements the graph convolution layer proposed in [1].
+        \item (15 points) Complete the class GAttn in ``src/utils/layers.py'', which implements the graph attention layer proposed in [2].
+        \item (15 points) Complete the class GDiffPool in ``src/utils/layers.py'', which implements the graph differentiable pooling layer proposed in [3].
+        \item (15 points) Complete the class GPool in ``src/utils/layers.py'', which implements the graph pooling layer proposed in [4].
+        \item (10 points) Run the model by ``bash run\_GNN.sh'' and report the mean 10-fold cross-validation performance. After running the model, the 10-fold results are automatically store in the ``results/PROTEINS.txt'' file. Please try different graph convolution layers (GConv or GAttn) and different graph pooling layers (GDiffPool or GPool) in ``configs/PROTEINS'' file and provide a short analysis of the results.
+    \end{enumerate}
+
+    \textcolor{red}{Required Materials:}
+
+    \textcolor{red}{[1] Semi-Supervised Classification with Graph Convolutional Networks (\url{https://arxiv.org/pdf/1609.02907.pdf})}
+
+    \textcolor{red}{[2] Graph Attention Networks (\url{https://arxiv.org/pdf/1710.10903.pdf})}
+
+    \textcolor{red}{[3] Hierarchical Graph Representation Learning with Differentiable Pooling (\url{https://arxiv.org/pdf/1806.08804.pdf})}
+
+    \textcolor{red}{[4] Graph U-Nets (\url{https://arxiv.org/pdf/1905.05178.pdf})}
+
+    % \item (40 points)
+    % In this assignment, you will implement a recurrent neural network (RNN) for language modeling using PyTorch. The task is to predict word $x_{t+1}$ given words $x_1,\ldots,x_{t}$:
+    % $$P(x_{t+1}=v_j|x_t,\ldots,x_1)$$
+    % where $v_j$ is the $j$-th word in the vocabulary. The file``utils.py'' gives an example of how to generate the vocabulary. You can read it if interested. With the vocabulary, we can transform a word $x_i$ into a one-hot vector.
+    % Suppose our RNN model is, for $t=1,\ldots,n-1$:
+    % \begin{eqnarray}
+    %     e^{(t)}&=&x^{(t)}L,\nonumber \\
+    %     h^{(t)}&=&\mbox{sigmoid}(h^{(t-1)}H+e^{(t)}I+b_1),\nonumber \\
+    %     \hat{y}^{(t)}&=&\mbox{softmax}(h^{(t)}U+b_2),\nonumber \\
+    %     \bar{P}(x_{t+1}&=&v_j|x_t,\ldots,x_1)=\hat{y}_j^{(t)}.\nonumber
+    % \end{eqnarray}
+    % where the first line actually corresponds to a word embedding lookup operation. $h^{(0)}$ is the initial hidden state, $\hat{y}^{(t)}\in\mathbb{R}^{|V|}$ and its $j$-th entry is $\hat{y}_j^{(t)}$.
+
+    % Training parameters $\theta$ in this model are:
+    % \begin{enumerate}
+    %     \item[$\cdot$] $L$ -- embedding matrix which transforms words in the vocabulary into lower dimensional word embedding.
+    %     \item[$\cdot$] $H$ -- hidden transformation matrix.
+    %     \item[$\cdot$] $I$ -- input transformation matrix which takes word embedding as input.
+    %     \item[$\cdot$] $U$ -- output transformation matrix which projects hidden state into prediction vector.
+    %     \item[$\cdot$] $b_1$ -- bias for recurrent layer.
+    %     \item[$\cdot$] $b_2$ -- bias for projection layer.
+    % \end{enumerate}
+
+    % \begin{enumerate}
+    %     \item (10 points) Let the dimension of word embedding as $d$, the size of vocabulary as $|V|$, the number of hidden units as $D$, please provide the size of each training parameter above.
+
+    %     \item (20 points) To train the model, we use \textit{cross-entropy} loss. For time step $t$ (note that for language model, we have loss for every time step), we have:
+    %     $$E^{(t)}(\theta)=CE(y^{(t)},\hat{y}^{(t)})=-\sum_{j=1}^{|V|}y_{j}^{(t)}\log(\hat{y}_{j}^{(t)}),$$
+    %     where $y^{(t)}$ is the one-hot vector corresponding to the target word, which here is equal to $x^{(t+1)}$. For a sequence, we sum the loss of every time step.
+
+    %     Modern deep learning libraries like \textbf{PyTorch} does not require the implementation of back-propagation, but you should know the details. Compute the following gradients at a single time step $t$:
+    %     $$\frac{\partial E^{(t)}}{\partial U},\frac{\partial E^{(t)}}{\partial b_2}, \frac{\partial E^{(t)}}{\partial I}|_{(t)},\frac{\partial E^{(t)}}{\partial H}|_{(t)},\frac{\partial E^{(t)}}{\partial b_1}|_{(t)},\frac{\partial E^{(t)}}{\partial h^{(t-1)}}$$
+    %     where $|_{(t)}$ denotes the gradient with respect to time step $t$ only. Note that we have weight sharing in recurrent layer, so in practice, the back-propagation would update the parameters according to the gradients across all time steps.
+    %     Hint: $$\frac{\partial E^{(t)}}{\partial U}=(h^{(t)})^T(\hat{y}^{(t)}-y^{(t)})$$
+    %     Make sure you understand this hint and you can use it directly in your answer.
+
+    %     \item (10 points) To evaluate a language model, we use \textit{perplexity}, which is defined as the inverse probability of the target word according to the model prediction $\bar{P}$:
+    %     % $$PP^{(t)}(y^{(T)},\hat{y}^{(t)})=\frac{1}{\bar{P}(x_{t+1}^{pred}=x_{t+1}|x_t,\ldots,x_1)}=\frac{1}{\sum_{j=1}^{|V|}y_{j}^{(t)}\hat{y}_{j}^{(t)}}.$$
+    %     $$PP^{(t)}(y^{(T)},\hat{y}^{(t)})=\frac{1}{\bar{P}(x_{t+1}^{pred}=x_{t+1}|x_t,\ldots,x_1)}=\frac{1}{\prod_{j=1}^{|V|}(\hat{y}_{j}^{(t)})^{y_{j}^{(t)}}}.$$
+
+    %     Show the relationship between \textit{cross-entropy} and \textit{perplexity}.
+    % \end{enumerate}
+
+    \item (30 points) As introduced in class, the attention mechanism can be written into:
+    $$\mbox{Attention}(Q,K,V)=\mbox{softmax}(QK^T)V.$$
+    By adding linear transformations on $Q$, $K$, and $V$, it turns into:
+    $$\mbox{Attention}(QW^Q,KW^K,VW^V)=\mbox{softmax}(QW^Q(KW^K)^T)VW^V.$$
+    Here, we set $Q \in \mathbb{R}^{n \times d}$, $W^Q \in \mathbb{R}^{d \times d}$, $K \in \mathbb{R}^{n \times d}$, $W^K \in \mathbb{R}^{d \times d}$, $V \in \mathbb{R}^{n \times d}$, $W^V \in \mathbb{R}^{d \times d}$.
+
+    In practice, the multi-head attention is used, which is defined as:
+    $$\mbox{MultiHead}(Q,K,V)=\mbox{Concat}(head_1, \ldots, head_h),$$
+    where
+    $$head_i=\mbox{Attention}(QW^Q_i,KW^K_i,VW^V_i),\ i=1,\ldots,h.$$
+    Here, $Q$, $K$, $V$ are the same as defined above. We set $W^Q_i \in \mathbb{R}^{d \times \frac{d}{h}}$, $W^K_i \in \mathbb{R}^{d \times \frac{d}{h}}$, $W^V_i \in \mathbb{R}^{d \times \frac{d}{h}}$.
+
+    \begin{enumerate}
+        \item (10 points) Compute and compare the number of parameters between the single-head and multi-head attention.
+        \item (10 points) Compute and compare the amount of computation between the single-head and multi-head attention, including the softmax step. Use the big-O notation to show your results.
+
+        (Hint2: Quoted from the paper (\url{https://arxiv.org/pdf/1706.03762.pdf}), ``Due to the reduced dimension of each head, the total computational cost is similar to that of single-head attention with full dimensionality.'')
+
+        \item (10 points) In a variant of attention layer, the softmax operator is replaced by $1/n$, which can save a lot of computational resources. Show how this change can reduce the computational cost. Please ignore the computational differences between softmax and $1/n$. You can assume $d < n$, which is common in computer vision applications.
+    \end{enumerate}
+
+\end{enumerate}
+
+
+
+\end{document}
