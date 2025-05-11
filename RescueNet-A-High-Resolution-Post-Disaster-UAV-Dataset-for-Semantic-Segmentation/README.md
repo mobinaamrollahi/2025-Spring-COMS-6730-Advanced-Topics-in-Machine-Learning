@@ -1,46 +1,107 @@
-# RescueNet Dataset 
+# Segmenter: Transformer for Semantic Segmentation (with RescueNet)
 
-## Overview
+[Segmenter: Transformer for Semantic Segmentation](https://arxiv.org/abs/2105.05633)
 
-Frequent, and increasingly severe, natural disasters threaten human health, infrastructure, and natural systems. The provision of accurate, timely, and understandable information has the potential to revolutionize disaster management. For quick response and recovery on a large scale, after a natural disaster such as a hurricane, access to aerial images is critically important for the response team. The emergence of small unmanned aerial systems (UAS) along with inexpensive sensors presents the opportunity to collect thousands of images after each natural disaster with high flexibility and easy maneuverability for rapid response and recovery.  Moreover, UAS can access hard-to-reach areas and perform data collection  tasks that can be unsafe for humans if not impossible.  Despite all these advancements and efforts to collect such large datasets, analyzing them and extracting meaningful information remains a significant challenge in scientific communities.
+---
 
-RescueNet provides high-resolution UAS imageries with detailed semantic annotation regarding the damages.
+## RescueNet Support
 
-![alt text](https://github.com/tashnimchowdhury/RescueNet-A-High-Resolution-Post-Disaster-UAV-Dataset-for-Semantic-Segmentation/blob/main/example-rescuenet-all-cls.PNG?raw=true)
+This fork supports training and evaluation on the [RescueNet dataset](https://www.nature.com/articles/s41597-023-02799-4), a high-resolution UAV-based semantic segmentation dataset for disaster response.
 
-
-## Dataset Details
-
-The data is collected with a small UAS platform, DJI Mavic Pro quadcopters, after Hurricane Michael. The whole dataset has 4494 images, divided into training (~80%), validation (~10%), and test (~10%) sets. The semantic segmentation labels include: 1) Background, 2) Water, 3)Building No Damage, 4) Building Minor Damage, 5) Building Major Damage, 6) Buidling Total Destruction, 7) Road-Clear, 8) Road-Blocked, 9)Vehicle, 10) Tree, 11) Pool.
-
- <!--  
-The dataset can be downloaded from this link: https://drive.google.com/drive/folders/1XNgPVmiu9egr1fywgNeXfnxojFOe_INT?usp=sharing
-
--->
-
-The dataset can be downloaded from: [Dropbox](https://www.dropbox.com/scl/fo/ntgeyhxe2mzd2wuh7he7x/AHJ-cNzQL-Eu04HS6bvBgcw?rlkey=6vxiaqve9gp6vzvzh3t5mz0vv&e=1&dl=0) or [figshare](https://springernature.figshare.com/collections/RescueNet_A_High_Resolution_UAV_Semantic_Segmentation_Benchmark_Dataset_for_Natural_Disaster_Damage_Assessment/6647354/1)
-
-## License
-
-This dataset is released under the [Creative Common License CC BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/).
-
-### Paper Link
-
-The paper can be downloaded from this [link](https://www.nature.com/articles/s41597-023-02799-4).
-Please cite our paper when using the dataset
-
- ```
- 
-@article{rahnemoonfar2023rescuenet,
-  title={RescueNet: a high resolution UAV semantic segmentation dataset for natural disaster damage assessment},
-  author={Rahnemoonfar, Maryam and Chowdhury, Tashnim and Murphy, Robin},
-  journal={Scientific data},
-  volume={10},
-  number={1},
-  pages={913},
-  year={2023},
-  publisher={Nature Publishing Group UK London}
-}
-
+Folder structure:
+```
+data/rescuenet/
+├── annotations/
+│   ├── training/
+│   ├── validation/
+│   └── test/
+├── images/
+│   ├── training/
+│   ├── validation/
+│   └── test/
 ```
 
+---
+
+## Train and Test with RescueNet
+
+### Training example:
+```bash
+python main.py --dataset rescuenet --backbone vit_tiny_patch16_384 --decoder mask_transformer --singlescale --save-images --wandb
+```
+
+### Testing example:
+```bash
+python test.py --dataset rescuenet --model_path <log_folder> --singlescale --save-images --combine
+```
+
+**Notes:**
+- `--model_path` refers to the subfolder under `logs/`, e.g., `rescunet_20250511@013000`
+- `--save-images` stores predicted overlays
+- `--combine` optionally merges image, ground truth, and prediction into a single image
+
+---
+
+## Setup Instructions for Custom Dataset (e.g., RescueNet)
+
+1. Place your dataset in `data/rescuenet/` with the folder structure shown above.
+2. In `data/config/`, create:
+   - `rescunet.yml` — contains class labels and color palette
+   - `rescunet.py` — defines `dataset_type`, `data_root`, and preprocessing pipelines
+3. In `data/`, create `rescunet.py` which defines your `RescueNetDataset` class.
+   - Set `img_suffix='.jpg'` and `seg_map_suffix='_lab.jpg'` (or based on your mask filenames).
+4. Modify `data/__init__.py` to import `RescueNetDataset`
+5. Modify `data/factory.py` to support `"rescunet"` as a valid dataset.
+6. In `data/mmseg_config/`, create `rescunet.py` with your `CLASSES`, `PALETTE`, and pipeline config.
+7. Add a new `rescunet` entry in `config/config.py` or `config.yml`.
+
+---
+
+## Logs and Weights
+
+Training and evaluation logs will be stored in:
+
+```
+logs/rescunet_<timestamp>/
+```
+
+This includes:
+- `checkpoint.pth` — latest model checkpoint
+- `best.pth` — model with best validation performance
+- `config.yml` — training configuration
+- `log.txt` — per-epoch logs
+
+---
+
+## Weights & Biases
+
+To enable experiment logging:
+1. Install wandb:
+   ```bash
+   pip install wandb
+   ```
+2. Log in:
+   ```bash
+   wandb login
+   ```
+3. Use `--wandb` flag during training.
+
+---
+
+## Citation (Original Segmenter Paper)
+```
+@article{strudel2021,
+  title={Segmenter: Transformer for Semantic Segmentation},
+  author={Strudel, Robin and Garcia, Ricardo and Laptev, Ivan and Schmid, Cordelia},
+  journal={arXiv preprint arXiv:2105.05633},
+  year={2021}
+}
+```
+
+---
+
+## Acknowledgements
+
+The Vision Transformer backbone is adapted from [timm](https://github.com/rwightman/pytorch-image-models), and the training/evaluation framework builds on [mmsegmentation](https://github.com/open-mmlab/mmsegmentation).
+
+This project is based on the work of [quanghuy0497](https://github.com/quanghuy0497), with modifications to support the RescueNet dataset.

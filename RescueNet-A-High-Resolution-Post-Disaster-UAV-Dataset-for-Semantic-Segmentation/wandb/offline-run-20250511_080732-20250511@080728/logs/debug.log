@@ -1,0 +1,23 @@
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_setup.py:_flush():70] Current SDK version is 0.19.11
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_setup.py:_flush():70] Configure stats pid to 16604
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_setup.py:_flush():70] Loading settings from C:\Users\HIALAB\.config\wandb\settings
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_setup.py:_flush():70] Loading settings from C:\Users\HIALAB\Desktop\another_segmenter\wandb\settings
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_setup.py:_flush():70] Loading settings from environment variables
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_init.py:setup_run_log_directory():724] Logging user logs to C:\Users\HIALAB\Desktop\another_segmenter\wandb\offline-run-20250511_080732-20250511@080728\logs\debug.log
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_init.py:setup_run_log_directory():725] Logging internal logs to C:\Users\HIALAB\Desktop\another_segmenter\wandb\offline-run-20250511_080732-20250511@080728\logs\debug-internal.log
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_init.py:init():852] calling init triggers
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_init.py:init():857] wandb.init called with sweep_config: {}
+config: {'world_batch_size': 2, 'version': 'normal', 'resume': True, 'dataset_kwargs': {'dataset': 'rescuenet', 'dataset_path': 'data/rescuenet', 'image_size': 640, 'crop_size': 640, 'batch_size': 2, 'normalization': 'vit', 'split': 'train', 'num_workers': 8}, 'algorithm_kwargs': {'batch_size': 2, 'start_epoch': 0, 'num_epochs': 1, 'eval_freq': 5}, 'optimizer_kwargs': {'opt': 'sgd', 'lr': 0.001, 'weight_decay': 0.0, 'momentum': 0.9, 'clip_grad': None, 'sched': 'polynomial', 'epochs': 1, 'min_lr': 1e-05, 'poly_power': 0.9, 'poly_step_size': 1, 'iter_max': 1798, 'iter_warmup': 0.0}, 'net_kwargs': {'image_size': (640, 640), 'patch_size': 16, 'd_model': 192, 'n_heads': 3, 'n_layers': 12, 'normalization': 'vit', 'distilled': False, 'backbone': 'vit_tiny_patch16_384', 'dropout': 0.0, 'drop_path_rate': 0.1, 'decoder': {'drop_path_rate': 0.0, 'dropout': 0.1, 'n_layers': 2, 'name': 'mask_transformer', 'n_cls': 11}, 'n_cls': 11}, 'amp': False, 'log_dir': 'logs/rescuenet_20250511@080728', 'inference_kwargs': {'im_size': 640, 'window_size': 640, 'window_stride': 640}, '_wandb': {}}
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_init.py:init():893] starting backend
+2025-05-11 08:07:32,872 INFO    MainThread:16604 [wandb_init.py:init():897] sending inform_init request
+2025-05-11 08:07:32,887 INFO    MainThread:16604 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn, using: spawn
+2025-05-11 08:07:32,887 INFO    MainThread:16604 [wandb_init.py:init():907] backend started and connected
+2025-05-11 08:07:32,887 INFO    MainThread:16604 [wandb_init.py:init():1005] updated telemetry
+2025-05-11 08:07:33,006 INFO    MainThread:16604 [wandb_init.py:init():1029] communicating run to backend with 90.0 second timeout
+2025-05-11 08:07:33,032 INFO    MainThread:16604 [wandb_init.py:init():1104] starting run threads in backend
+2025-05-11 08:07:33,150 INFO    MainThread:16604 [wandb_run.py:_console_start():2573] atexit reg
+2025-05-11 08:07:33,150 INFO    MainThread:16604 [wandb_run.py:_redirect():2421] redirect: wrap_raw
+2025-05-11 08:07:33,150 INFO    MainThread:16604 [wandb_run.py:_redirect():2490] Wrapping output streams.
+2025-05-11 08:07:33,150 INFO    MainThread:16604 [wandb_run.py:_redirect():2513] Redirects installed.
+2025-05-11 08:07:33,151 INFO    MainThread:16604 [wandb_init.py:init():1150] run started, returning control to user process
+2025-05-11 08:25:59,759 INFO    MsgRouterThr:16604 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 0 handles.

@@ -1,0 +1,54 @@
+- id: 0
+  name: unlabeled
+  color: [0, 0, 0]
+  isthing: 0
+
+- id: 1
+  name: water
+  color: [61, 230, 250]
+  isthing: 0
+
+- id: 2
+  name: building-no-damage
+  color: [180, 120, 120]
+  isthing: 1
+
+- id: 3
+  name: building-medium-damage
+  color: [235, 255, 7]
+  isthing: 1
+
+- id: 4
+  name: building-major-damage
+  color: [255, 184, 6]
+  isthing: 1
+
+- id: 5
+  name: building-total-destruction
+  color: [255, 0, 0]
+  isthing: 1
+
+- id: 6
+  name: vehicle
+  color: [255, 0, 245]
+  isthing: 1
+
+- id: 7
+  name: road-clear
+  color: [140, 140, 140]
+  isthing: 0
+
+- id: 8
+  name: road-blocked
+  color: [160, 150, 20]
+  isthing: 0
+
+- id: 9
+  name: tree
+  color: [4, 250, 7]
+  isthing: 0
+
+- id: 10
+  name: pool
+  color: [255, 235, 0]
+  isthing: 0

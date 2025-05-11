@@ -1,0 +1,15 @@
+{"time":"2025-05-10T01:02:55.604856-05:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\HIALAB\\Desktop\\another_segmenter\\wandb\\offline-run-20250510_010255-20250510@010251\\logs\\debug-core.log"}
+{"time":"2025-05-10T01:02:55.8877848-05:00","level":"WARN","msg":"GraphQL client is nil, skipping feature loading"}
+{"time":"2025-05-10T01:02:55.8882891-05:00","level":"INFO","msg":"created new stream","id":"20250510@010251"}
+{"time":"2025-05-10T01:02:55.8882891-05:00","level":"INFO","msg":"stream: started","id":"20250510@010251"}
+{"time":"2025-05-10T01:02:55.8882891-05:00","level":"INFO","msg":"handler: started","stream_id":"20250510@010251"}
+{"time":"2025-05-10T01:02:55.8885255-05:00","level":"INFO","msg":"sender: started","stream_id":"20250510@010251"}
+{"time":"2025-05-10T01:02:55.8885255-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"20250510@010251"}
+{"time":"2025-05-10T01:02:55.8910565-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-10T01:07:21.5210727-05:00","level":"INFO","msg":"stream: closing","id":"20250510@010251"}
+{"time":"2025-05-10T01:07:21.5210727-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-10T01:07:21.5210727-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-10T01:07:21.5210727-05:00","level":"INFO","msg":"handler: closed","stream_id":"20250510@010251"}
+{"time":"2025-05-10T01:07:21.5210727-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":"20250510@010251"}
+{"time":"2025-05-10T01:07:21.5210727-05:00","level":"INFO","msg":"sender: closed","stream_id":"20250510@010251"}
+{"time":"2025-05-10T01:07:21.5210727-05:00","level":"INFO","msg":"stream: closed","id":"20250510@010251"}

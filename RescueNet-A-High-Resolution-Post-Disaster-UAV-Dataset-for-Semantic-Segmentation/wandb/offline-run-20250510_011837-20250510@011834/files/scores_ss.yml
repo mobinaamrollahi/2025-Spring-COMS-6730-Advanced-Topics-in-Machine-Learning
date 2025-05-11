@@ -1,0 +1,19 @@
+cat_iou:
+- .nan
+- 85.61
+- 71.23
+- 20.62
+- 0.41
+- .nan
+- 16.41
+- 1.85
+- 92.79
+- 56.14
+- 79.74
+- 29.13
+- 38.49
+- .nan
+inference: single_scale
+mean_accuracy: 54.47
+mean_iou: 44.77
+pixel_accuracy: 88.92

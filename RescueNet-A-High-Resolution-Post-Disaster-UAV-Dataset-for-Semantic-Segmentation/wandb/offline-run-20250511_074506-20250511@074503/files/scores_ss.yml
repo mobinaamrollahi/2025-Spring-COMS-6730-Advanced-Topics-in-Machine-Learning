@@ -1,0 +1,16 @@
+cat_iou:
+- 75.26
+- 74.67
+- 37.39
+- 28.4
+- 2.07
+- 6.39
+- 0.0
+- 59.33
+- 0.37
+- 75.18
+- 0.0
+inference: single_scale
+mean_accuracy: 40.27
+mean_iou: 32.64
+pixel_accuracy: 80.95
